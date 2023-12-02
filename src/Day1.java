@@ -1,7 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,14 +7,9 @@ import java.util.regex.Pattern;
 
 public class Day1 {
     public static void solution() {
-        List<String> inputStrings = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("resources/day1_input.txt"))) {
-            reader.lines().forEach(inputStrings::add);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        part1(inputStrings);
-        part2(inputStrings);
+        List<String> input = Main.getInput("resources/day1_input.txt");
+        part1(input);
+        part2(input);
     }
     /*
     --- Part Two ---
