@@ -30,13 +30,12 @@ public class Day1 {
     What is the sum of all of the calibration values?
     */
     private static void part2(List<String> inputStrings) {
-
         AtomicInteger sum = new AtomicInteger();
         inputStrings.forEach(line -> {
             sum.getAndAdd(findDigitFromLeft(line) * 10);
             sum.getAndAdd(findDigitFromRight(line));
         });
-        System.out.println("Solution for day 1 part 2: " + sum.get());
+        System.out.println("Day 1 part 2 solution: " + sum.get());
     }
 
     private static int findDigitFromLeft(String input) {
@@ -120,7 +119,7 @@ public class Day1 {
             sum.addAndGet(getLeftmostDigit(line) * 10);
             sum.getAndAdd(getRightmostDigit(line));
         });
-        System.out.println("Solution for day 1: " + sum.get());
+        System.out.println("Day 1 part 1 solution: " + sum.get());
     }
 
     private static int getLeftmostDigit(String line) {
