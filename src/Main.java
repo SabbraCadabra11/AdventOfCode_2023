@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Day3.solution();
+        Day4.solution();
     }
 
     public static List<String> getInput(String inputPath) {
