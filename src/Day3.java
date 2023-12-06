@@ -102,11 +102,11 @@ public class Day3 {
         }
         //check up
         if (r > 0) {
-           for (int x = leftBound; x <= rightBound; x++) {
-               if (isEnginePartSymbol(layout[r-1][x])) {
-                   return true;
-               }
-           }
+            for (int x = leftBound; x <= rightBound; x++) {
+                if (isEnginePartSymbol(layout[r-1][x])) {
+                    return true;
+                }
+            }
         }
         //check down
         if (r < layout.length - 1) {
