@@ -26,10 +26,13 @@ public class Day5 {
         for (int i = 0; i < allSeeds.size(); i += 2) {
             final long seedRangeStart = allSeeds.get(i);
             final long seedRangeEnd = seedRangeStart + allSeeds.get(i + 1);
+            System.out.println("Current seed range start: " + seedRangeStart);
             for (long seed = seedRangeStart; seed < seedRangeEnd; seed++) {
                 final long seedLocation = findSeedLocation(seed, almanac);
+                System.out.println("Current seed: " + seed);
                 if (seedLocation < closestLocation) {
                     closestLocation = seedLocation;
+                    System.out.printf("Current closest location: %s%n", closestLocation);
                 }
             }
         }
