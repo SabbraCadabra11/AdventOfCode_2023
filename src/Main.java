@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Day6.solution();
+        Day7.solution();
     }
 
     public static List<String> getInput(String inputPath) {
-        List<String> input = new ArrayList<>();
+        var input = new ArrayList<String>();
         try (BufferedReader reader = new BufferedReader(new FileReader(inputPath))) {
             reader.lines().forEach(input::add);
         } catch (IOException e) {
