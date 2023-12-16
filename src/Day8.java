@@ -19,10 +19,10 @@ public class Day8 {
         }
         int turns = 0;
         var nextCoordinates = map.get("AAA");
-        String nextPlace = "";
+        var nextPlace = "";
         while (!nextPlace.equals("ZZZ")) {
-            char direction = turnInstructions[turns % turnInstructions.length];
             turns++;
+            char direction = turnInstructions[turns % turnInstructions.length];
             nextPlace = nextCoordinates.getPlace(direction);
             nextCoordinates = map.get(nextPlace);
         }

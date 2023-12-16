@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Day7.solution();
+        Day10.solution();
     }
 
     public static List<String> getInput(String inputPath) {
@@ -17,5 +17,18 @@ public class Main {
             throw new RuntimeException(e);
         }
         return input;
+    }
+
+    public static char[][] transformInputTo2dArray(List<String> input) {
+        final int rows = input.size();
+        final int columns = input.get(0).length();
+        char[][] array = new char[rows][columns];
+
+        for (int r = 0; r < array.length; r++) {
+            for (int c = 0; c < columns; c++) {
+                array[r][c] = input.get(r).charAt(c);
+            }
+        }
+        return array;
     }
 }

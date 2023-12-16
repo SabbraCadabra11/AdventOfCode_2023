@@ -1,11 +1,9 @@
-import java.util.List;
 
 public class Day3 {
     public static void solution() {
-        final var input = Main.getInput("resources/day3_input.txt");
-        final var engineLayoutArray = transformInputTo2dArray(input);
+        var engineLayoutArray = Main.transformInputTo2dArray(Main.getInput("resources/day10_input.txt"));
         part1(engineLayoutArray);
-        part2(engineLayoutArray);
+        //part2(engineLayoutArray);
     }
 
 
@@ -25,17 +23,17 @@ public class Day3 {
         System.out.println("Day 3 part 1 solution: " + sum);
     }
 
-    private static void part2(char[][] engineLayoutArray) {
-        int sum = 0;
-        for (int r = 0; r < engineLayoutArray.length; r++) {
-            for (int c = 0; c < engineLayoutArray[r].length; c++) {
-                if (engineLayoutArray[r][c] == '*') {
-                    sum += calculateGearRatio(engineLayoutArray, r, c);
-                }
-            }
-        }
-
-    }
+//    private static void part2(char[][] engineLayoutArray) {
+//        int sum = 0;
+//        for (int r = 0; r < engineLayoutArray.length; r++) {
+//            for (int c = 0; c < engineLayoutArray[r].length; c++) {
+//                if (engineLayoutArray[r][c] == '*') {
+//                    sum += calculateGearRatio(engineLayoutArray, r, c);
+//                }
+//            }
+//        }
+//
+//    }
 
     private static int calculateGearRatio(char[][] layout, int r, int c) {
         int adjacentNumbers = 0;
@@ -145,18 +143,5 @@ public class Day3 {
                 (c > 57 && c < 65) ||
                 (c > 90 && c < 97) ||
                 (c > 122 && c < 127);
-    }
-
-    private static char[][] transformInputTo2dArray(List<String> input) {
-        final int rows = input.size();
-        final int columns = input.get(0).length();
-        char[][] layout = new char[rows][columns];
-
-        for (int r = 0; r < layout.length; r++) {
-            for (int c = 0; c < columns; c++) {
-                layout[r][c] = input.get(r).charAt(c);
-            }
-        }
-        return layout;
     }
 }
